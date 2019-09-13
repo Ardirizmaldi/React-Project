@@ -19,6 +19,11 @@ class App extends React.Component {
   
 
   render() {
+    const { kitty, searchField } =this.state;
+    const filteredKitty = kitty.filter(pussy =>
+      pussy.name.toLowerCase().includes(searchField.toLowerCase())
+      );
+
   return (
     <div className="App">
     <input type='search' placeholder='search kitty' 
@@ -26,7 +31,7 @@ class App extends React.Component {
     this.setState({searchField: e.target.value}, 
     () => console.log(this.state))
     }/>
-    <CardList kitty={this.state.kitty}>
+    <CardList kitty={filteredKitty}>
     </CardList>
     </div>
   );
