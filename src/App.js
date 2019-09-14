@@ -10,6 +10,8 @@ class App extends React.Component {
       kitty: [],
       searchField: ''
     };
+
+    // this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -18,6 +20,9 @@ class App extends React.Component {
     .then(user => this.setState({kitty:user}))    
   }
   
+  // handleChange = (e) => {
+  //   this.setState({searchField: e.target.value})
+  // }
 
   render() {
     const { kitty, searchField } =this.state;
